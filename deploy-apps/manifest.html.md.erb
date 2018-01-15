@@ -105,7 +105,8 @@ You can think of them as the most recent values.
 
 `cf push` follows rules of precedence when setting attribute values:
 
-* Manifests override most recent values, including defaults.
+* Manifests override most recent values, including 
+s.
 * Command line options override manifests.
 
 In general, you can think of manifests as just another input to `cf push`, to be combined with command line options and most recent values.
@@ -532,9 +533,9 @@ defaults: &amp;defaults
 
 applications:
 - name: bigapp
-  &lt;&lt;: defaults
+  &lt;&lt;: *defaults
 - name: smallapp
-  &lt;&lt;: defaults
+  &lt;&lt;: *defaults
   memory: 256M
 </pre>
 
